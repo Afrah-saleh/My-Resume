@@ -1,0 +1,154 @@
+/* styles.css */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8; /* Slightly lighter shade for a fresher look */
+    padding: 40px;
+}
+
+/* Main Heading */
+h1 {
+    font-size: 2.5em;
+    color: #0a5275;
+    text-align: center;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 1px #d2d2d2; /* Softer shadow for a cleaner look */
+    animation: scaleUp 0.5s ease-in-out forwards;
+}
+
+/* Subheadings */
+h2 {
+    font-weight: 600; /* Add font weight for better visual hierarchy */
+    color: #0d3b66;
+    margin: 1em 0;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #0d3b66; /* Thinner border for subtlety */
+}
+
+/* Paragraphs and List Items */
+p, li {
+    font-size: 1em;
+    color: #333;
+    padding: 8px 0;
+}
+
+/* Unordered List */
+ul {
+    margin-left: 20px;
+    list-style-type: none;
+}
+
+/* List Items with custom bullet */
+ul li {
+    position: relative;
+    padding-left: 20px;
+}
+
+ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #1a8cd8;
+}
+
+/* Nested List Items */
+ul ul li {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Horizontal Rule */
+hr {
+    margin: 20px auto;
+    width: 80%; /* Set a max width for better control */
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #1a8cd8, transparent);
+    border-radius: 5px;
+}
+
+/* Links */
+a {
+    color: #1a8cd8;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* Smooth color transition on hover */
+}
+
+a:hover {
+    color: #0d3b66; /* Darker shade on hover for better contrast */
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #0a5275;
+    color: white;
+    text-align: center;
+}
+
+/* Shapes and Animations */
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply a subtle fade-in animation to all elements */
+body, h1, h2, p, ul, ol, li, footer {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Custom shape for the footer */
+footer::before {
+    content: '';
+    display: block;
+    height: 25px;
+    background-color: #f8f8f8;
+    border-radius: 50% / 100%;
+    position: relative;
+    top: -25px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em; /* Slightly smaller font-size for mobile */
+    }
+
+    /* Adjust the horizontal rule for smaller screens */
+    hr {
+        width: 90%;
+    }
+    
+    /* Footer shape adjustment for mobile */
+    footer::before {
+        top: -20px;
+        height: 20px;
+    }
+}
