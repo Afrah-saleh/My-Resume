@@ -1,2 +1,2 @@
 # My-Resume
-A small project using HTML
+A small project using HTML and css
